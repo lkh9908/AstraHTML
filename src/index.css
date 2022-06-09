@@ -1,0 +1,55 @@
+
+
+.navbar {
+    /* to make bulma navbar transparent */ 
+    
+    background-color: transparent !important;
+    /* background-image: none ; */
+
+    /* margin */
+    margin-bottom: 0.5%;
+}
+
+.button {
+    /* to make bulma navbar transparent */ 
+    
+    background-color: transparent !important;
+    border-color: transparent !important;
+    color: white !important;
+}
+
+.info {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+.title {
+    font-family: 'Caudex';font-size: 22px;
+}
+
+.body {
+    font-family: 'Caudex';font-size: 22px;
+}
+
+.card {
+    background-color: transparent !important;
+    color: white !important;
+}
+
+.personInfo {
+    padding: 1px !important;
+    text-align: center !important;
+    font-size: 12px !important;
+}
+
+.media-content {
+    text-align: center !important;
+}
+
+.is-4 {
+    font-size: 20px !important;
+}
+
+.emphasis {
+    font-size: large;
+}
