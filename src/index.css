@@ -1,23 +1,4 @@
 
-
-.navbar {
-    /* to make bulma navbar transparent */ 
-    
-    background-color: transparent !important;
-    /* background-image: none ; */
-
-    /* margin */
-    margin-bottom: 0.5%;
-}
-
-.button {
-    /* to make bulma navbar transparent */ 
-    
-    background-color: transparent !important;
-    border-color: transparent !important;
-    color: white !important;
-}
-
 .info {
     background-color: transparent !important;
     color: white !important;
@@ -29,6 +10,9 @@
 
 .body {
     font-family: 'Caudex';font-size: 22px;
+    line-height: 30px;
+    letter-spacing: 10%;
+    word-spacing: 10%;
 }
 
 .card {
@@ -52,4 +36,14 @@
 
 .emphasis {
     font-size: large;
+}
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 0px;
+  }
+
+.astramap {
+    font-size: 46px !important;
 }

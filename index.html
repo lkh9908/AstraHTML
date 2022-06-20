@@ -5,10 +5,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Astra</title>
-  <script src="../p5.js"></script>
+  <script src="./p5.js"></script>
   <!-- <script src="../addons/p5.sound.js"></script> -->
-  <script src="sketch.js"></script>
-  <link rel="stylesheet" href="./index.css">
+  <script src="./src/sketch.js"></script>
+  <link rel="stylesheet" href="./src/index.css">
+  <link rel="stylesheet" href="./src/nav.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet"
         integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
@@ -24,6 +25,7 @@
         document.getElementById(i).style.display='none';
       }
       document.getElementById(shown).style.display='block';
+      document.getElementById("menu-toggle").checked = false;
       return false;
     }
 
@@ -39,70 +41,55 @@
 
 <body onload="loadHome()">
   <main>
-  <nav class="navbar is-transparent">
-    <div class="navbar-brand">
-      <a class="navbar-item" >
-        <img src="https://bulma.io/images/bulma-logo.png" href="#" onclick="return displayPages('home');" alt="Logo" width="112" height="28">
-      </a>
-      <div class="navbar-burger" data-target="navbarExampleTransparentExample">
-        <span></span>
-        <span></span>
-        <span></span>
+    <section class="top-nav">
+      <div>
+        <a class="" href="#" onclick="return displayPages('home');">
+          <span>Logo Here</span>
+        </a>
       </div>
-    </div>
-  
-    <div id="navbarExampleTransparentExample" class="navbar-menu">
-      <div class="navbar-start">
-        
-      </div>
-  
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <p class="control">
-              <a class="button" href="#" onclick="return displayPages('nebula');">
-                <span>THE NEBULA</span>
-              </a>
-            </p>
-            <p class="control">
-              <a class="button" href="#" onclick="return displayPages('astramap');">
-                <span>ASTRAMAP</span>
-              </a>
-            </p>
-            <p class="control">
-              <a class="button" href="#" onclick="return displayPages('lore');">
-                <span>LORE</span>
-              </a>
-            </p>
-
-            <p class="control">
-              <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                <span class="icon">
-                  <i class="fab fa-twitter"></i>
-                </span>
-              </a>
-            </p>
-
-            <p class="control">
-              <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                <span class="icon">
-                  <i class="fab fa-discord"></i>
-                </span>
-              </a>
-            </p>
-
-            <p class="control">
-              <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="https://bulma.io" target="_blank" href="https://twitter.com/intent/tweet?text=Bulma: a modern CSS framework based on Flexbox&amp;hashtags=bulmaio&amp;url=https://bulma.io&amp;via=jgthms">
-                <span class="icon">
-                  <i class="fab fa-instagram"></i>
-                </span>
-              </a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </nav>
+      <input id="menu-toggle" type="checkbox" />
+      <label class='menu-button-container' for="menu-toggle">
+      <div class='menu-button'></div>
+    </label>
+      <ul class="menu">
+        <li onclick="return displayPages('nebula');">
+          <a class="" href="#">
+            <span>THE NEBULA</span>
+          </a>
+        </li>
+        <li onclick="return displayPages('astramap');">
+          <a class="" href="#">
+            <span>ASTRAMAP</span>
+          </a>
+        </li>
+        <li onclick="return displayPages('lore');">
+          <a class="" href="#">
+            <span>LORE</span>
+          </a>
+        </li>
+        <li>
+          <a class="bd-tw-button" href="https://twitter.com/AstraSpaceTime?s=20&t=fH6-C7aOGhSVii4fGmp_ww">
+            <span class="icon">
+              <i class="fab fa-twitter"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="bd-tw-button" data-social-network="Discord" href="https://discord.gg/pw8PzfRG2z">
+            <span class="icon">
+              <i class="fab fa-discord"></i>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="bd-tw-button" data-social-network="Instagram" href="">
+            <span class="icon">
+              <i class="fab fa-instagram"></i>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </section>
 
 </main>
 
@@ -116,30 +103,35 @@
         <br>
         OF THE NEBULA...
       </div>
+      <br>
       <div>
         <article>
           Astra S&T is a decentralized brand that values storytelling, vibe-building, and aesthetic & philosophical exploration. It's built, established, and owned by the community.
           <br>
           <br>
-          A collection of 10,000 avatars gives you membership access to The Nebula. Here, every precious piece of vision, art, culture, vibe and story comes together to nourish the Nebula, which in turn feeds back the community with much more surprises yet to be explored — amazing things are happening in between the digital and the real......
+          A collection of 10,000 avatars gives you member access to The Nebula. Here, every precious piece of vision, art, culture, vibe, and story comes together to nourish the Nebula, which in turn feeds back to the community with much more surprises yet to be explored — amazing things are happening in between the digital and the real......
           <br>
           <br>
-          Enjoy your jouney.
+          Enjoy your journey.
+          
         </article>
       </div>
     </div>
-
+    <br>
+    <br>
+    <br>
+    <br>
     <div class="notification info">
       <div class="title is-1">
         THE FIRST CLUSTER
       </div>
-
+      <br>
         
         <div class="columns">
           <div class="column">
             <div class="card container is-fluid">
               <div class="">
-                <figure class="image is-128x128">
+                <figure class="image is-128x128 center">
                   <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
                 </figure>
               </div>
@@ -160,7 +152,7 @@
           <div class="column">
             <div class="card container is-fluid">
               <div class="">
-                <figure class="image is-128x128">
+                <figure class="image is-128x128 center">
                   <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
                 </figure>
               </div>
@@ -173,14 +165,14 @@
                 </div>
               </div>
               <div class="personInfo">
-                Ex-Game industry. Magicial illustrator of beauty and fashion in both worlds
+                Ex-Game industry. Magical illustrator of beauty and fashion in both worlds
                </div>
             </div>
           </div>
           <div class="column">
             <div class="card container is-fluid">
               <div class="">
-                <figure class="image is-128x128">
+                <figure class="image is-128x128 center">
                   <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
                 </figure>
               </div>
@@ -194,14 +186,14 @@
                 </div>
               </div>
               <div class="personInfo">
-                Web3 explorer. Know how to code.  Collector of coins IRL. Wanna have a real wand
+                Programmer, reader, and anime lover. Enjoying life... 
                </div>
             </div>
           </div>
           <div class="column">
             <div class="card container is-fluid">
               <div class="">
-                <figure class="image is-128x128">
+                <figure class="image is-128x128 center">
                   <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
                 </figure>
               </div>
@@ -215,7 +207,7 @@
                 </div>
               </div>
               <div class="personInfo">
-                Web3 brand surfer. Love sofa but have a lot of work to do. Excited to explore the distant lands
+                Web3 brand surfer. Love the sofa but have a lot of work to do. Excited to explore the distant lands
                </div>
             </div>
           </div>
@@ -230,12 +222,13 @@
   <!--astra map-->
   <div class="container is-max-desktop section" id="astramap">
     <div class="notification info">
-      <div class="title is-1">
+      <div class="title is-1 astramap">
         ASTRAMAP
       </div>
+      <br>
       <div>
         <article>
-          Astra S&T is a decentralized fashion brand that connectsromance, hearts, and stars.
+          Astra S&T is a decentralized fashion brand that connects romance, hearts, and stars.
           <br>
           <p style="display:inline" class="emphasis">PER ASPERA AD ASTRA</p> (through hardships to the stars)
         </article>
@@ -245,6 +238,7 @@
       <div class="title is-2">
         VISION & VALUE
       </div>
+      <br>
       <div class="container">
         <div class="subtitle is-4">
           <em>Community Leads</em> 
@@ -284,74 +278,78 @@
       <div class="title is-1">
         THE EPIC
       </div>
+      <br>
       <div>
         <article>
-          We all are stars in the Universe, 	
-          <br>						
+          We all are stars in the Universe,
+          <br>
           And Astra in the Metaverse...
-          <br>			
-          Looking for meanings through the space & time.
           <br>
-          Flourishing with freedom & choices.
+          Looking for meanings through the SPACETIME.
+          <br>
+          Flourishing with freedom and choices.
           <br>
           <br>
-          We're observers with insights of supremacy,
+          We are observers with insights into supremacy,
           <br>
-          Who travel through the time of eternity with constant youth;
+          Who travels through the eternity of time with constant youth;
           <br>
-          We watch the rises and falls with no interferences nor interruptions,
+          We watch the rises and falls with minds of peace,
           <br>
           Like a calm sage at the beach staring at the waves up and down...
           <br>
           <br>
-          We're adventurers with hearts of flame,
+          We are adventurers with hearts of flame,
           <br>
-          Who get enchanted with ambitions and charmed by dreams;
+          Who's enchanted with ambitions and charmed by dreams;
           <br>
-          We reconstruct materials with inspiration to serve our pursuits,
+          We reconstruct the world with inspiration to serve our purposes,
           <br>
-          Like an eager sailor on a voyage sticking to the destination...
-          <br>
-          <br>
-          We're wanderers with eyes of curiosity,
-          <br>
-          Who see no directions but flow with wherever the space goes;
-          <br>
-          We discover the hidden treasure along the way around,
-          <br>
-          Like a kid with innocence picking shells in the tides...
+          Like an eager captain sailing for the treasure from a far away...
           <br>
           <br>
-          We're meditators with spirits of intangibility,
+          We are wanderers with eyes of curiosity,
+          <br>
+          Who see no directions but flow with wherever the space leads;
+          <br>
+          We discover the hidden surprises along the way around,
+          <br>
+          Like an innocent kid picking pretty shells in the tides...
+          <br>
+          <br>
+          We are meditators with spirits of intangibility,
           <br>
           Who look for answers from the innermost part;
           <br>
-          We know well the power inside and exercise it well,
+          We know the power inside and exercise it well,
           <br>
-          Like a magician returning home independent of lighthouses...
+          Like a magician returning home shadowed by the dark...  
         </article>
       </div>
+      <br>
+      <br>
+      <br>
       <br>
       <br>
       <div class="title is-1">
         THROUGH THE SPACE TIME...
       </div>
+      <br>
       <div>
-        <article>
-          ASTRA roam about the wild universe as romancers, unbounded in directing, shaping, and dreaming. Wisdom is their intuition, freedom is their weapon, that they break through all definitions and shackles with no hesitation.
+        <article>  
+          ASTRA roam about the wild universe as romancers, unbounded in directing, shaping, and dreaming. Wisdom is their intuition, freedom is their weapons, and they break through all definitions and shackles with no hesitation.
           <br>
           <br>
-          ASTRA share bonds with each other via attraction and light. They are themselves worlds, anonymous but great, whose pride and glamour enlighten the dark corners, enchant the lost spirits, and melt the frozen hearts.
+          ASTRA share bonds with each other via attraction and light. They are themselves worlds, anonymous but extraordinary, whose pride and glamour enlighten the dark corners, enchant the lost spirits, and melt the frozen hearts.
           <br>
           <br>
-          ASTRA, the noble gems of the spacetime, are crystallized from infinite particles of trillions of stars and dust from light-years and ages away. They are dominators who deliver anger with destruction and mercy with construction.
+          ASTRA, the noble gems of the spacetime, is crystallized from infinite particles of trillions of stars and dust from light-years and ages away. They are dominators who deliver anger with destruction and mercy with construction.
           <br>
           <br>
-          Their majesty shall be admired by all.
+          All shall admire their majesty.
           <br>
           <br>
           In case you are not aware, you have already become an ASTRUM. The world is unrolling before your eyes. Enjoy the journey!  
-
         </article>
       </div>
     </div>

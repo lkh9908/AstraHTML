@@ -1,6 +1,9 @@
 let stars = []
-wid = 1500
-heig = 400
+// wid = 1500
+// heig = 400
+wid = window.innerWidth;
+heig = window.innerHeight;
+
 let starsNumber = parseInt(wid*heig/3000)
 starsNumber = 200
 // console.log(starsNumber)
